@@ -1,0 +1,47 @@
+NAME                                       SEC                    SecN       VAL       GLOB      ID
+s                                            2                   .text         0          1       4
+start1                                       0                     UND         0          1       5
+a                                            1                     abc        20          0       6
+b                                            3                       g        20          0       7
+
+NAME               SEC     VAL     GLOB     ID           SIZE           startAddress     RWE
+abc                 1       0        0       1             64                      0     111
+.text               2       0        0       2              0                      0     111
+g                   3       0        0       3              2                      0     111
+
+
+#.text
+
+
+#abc
+1C 24 1C 44 1C 84 20 4E 1C 84 00 20 
+1C 8E 12 00 1C 8E 12 00 1C 8E FE FF 
+1C A0 14 00 1C A0 14 00 1C A0 00 00 
+1C 84 14 00 1C 84 14 00 1C 84 00 00 
+1C 8E 12 00 1C 8E 12 00 1C 8E FE FF 
+1C A0 14 00 
+
+#g
+0C 00 
+
+#.ret.text
+Offset             Type           Sign   Value                                    Reference
+
+
+#.ret.abc
+Offset             Type           Sign   Value                                    Reference
+18                 R_386_32_PC32  +          3                                            g
+22                 R_386_32_PC32  +          4                                            s
+26                 R_386_32       +          1                                          abc
+30                 R_386_32       +          3                                            g
+34                 R_386_32       +          4                                            s
+38                 R_386_32       +          1                                          abc
+42                 R_386_32       +          3                                            g
+46                 R_386_32       +          4                                            s
+54                 R_386_32_PC32  +          3                                            g
+58                 R_386_32_PC32  +          4                                            s
+
+
+#.ret.g
+Offset             Type           Sign   Value                                    Reference
+

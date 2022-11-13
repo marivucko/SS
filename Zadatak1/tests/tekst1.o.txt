@@ -1,0 +1,40 @@
+NAME                                       SEC                    SecN       VAL       GLOB      ID
+s                                            0                     UND         0          1       5
+b                                            2                   .data         3          1       6
+a                                            1                   .text        10          0       7
+
+NAME               SEC     VAL     GLOB     ID           SIZE           startAddress     RWE
+.text               1       0        0       1             20                      0     111
+.data               2       0        0       2              4                      0     111
+mySection           3       0        0       3              6                      0     111
+.bss                4       0        0       4              8                      0     110
+
+
+#.text
+88 00 12 74 24 86 D0 07 64 84 0A 00 
+00 00 12 4C A0 00 00 24 
+
+#.data
+0B 00 0C 12 
+
+#mySection
+08 2C 24 00 FF FF 
+
+#.bss
+00 00 00 00 00 00 00 00 
+
+#.ret.text
+Offset             Type           Sign   Value                                    Reference
+10                 R_386_32       +          1                                        .text
+17                 R_386_32       +          6                                            b
+
+
+#.ret.data
+Offset             Type           Sign   Value                                    Reference
+0                  R_386_32       +          1                                        .text
+0                  R_386_32       -          5                                            s
+
+
+#.ret.mySection
+Offset             Type           Sign   Value                                    Reference
+

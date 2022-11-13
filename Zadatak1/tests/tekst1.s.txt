@@ -1,0 +1,48 @@
+.extern s
+.global b
+
+.text
+.equ a, 12-2*(0x04-3)
+pushb 0x12
+test r2, r3[2000]
+or r2[a], 0x1200
+cmp b, r2
+
+.data
+.word a-s+2-1
+.byte 12
+b:.byte 0x12
+
+.section mySection r,w,e
+halt
+add r2, 0xFFFF
+
+.bss
+.skip 2
+.align 3
+
+
+.end   
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+

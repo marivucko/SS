@@ -1,0 +1,81 @@
+.global s
+.extern start1
+
+.section abc r,w,e
+.equ a,20
+int r2
+int [r2]
+
+int r2[20000]
+int r2[0x2000]
+
+int $a
+int $b
+int $s
+
+int a
+int b
+int s
+
+int r2[a]
+int r2[b]
+int r2[s]
+
+int r7[a]
+int r7[b]
+int r7[s]
+
+int *20
+
+.text
+s:
+
+.section g r,e,w
+.equ b,20
+.word 12
+
+.end   
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+

@@ -1,0 +1,69 @@
+.extern s
+.global b
+
+
+.text
+.equ b, 20
+add r2[2000], 0x2000
+cmp r2, s
+xor a, 0x3ABC
+
+
+.data
+.byte 12
+.byte 0x12
+.skip 4
+.word 0xFFFF
+
+
+
+.section mySection r,w,e
+a:
+jmp a
+jmp $a
+jmp *3000
+
+.end   
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
